@@ -1,4 +1,14 @@
+# or lint-stage at pacakge.json add like
+# "ignore": [
+#   "node_modules",
+#   "public/assets",
+#   "public/js"
+# ],
+
+
 node_modules/
 
 public/js
 public/assets
+
+
