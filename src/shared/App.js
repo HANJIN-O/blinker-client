@@ -1,28 +1,27 @@
-import React, {Component} from 'react';
+import React, { Component } from "react";
 
 export default class App extends Component {
-  constructor () {
-    super ();
-    this.state = {score: 0};
+  constructor() {
+    super();
+    this.state = { score: 0 };
   }
 
-  componentWillMount () {
-    console.log ('componentWillMount is called');
-    const script = document.createElement ('script');
-    script.src = '/games/flappyBird.js';
-    const scriptCdn = document.createElement ('script');
-    scriptCdn.src = 'https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.8.0/p5.js';
-    document.body.appendChild (script);
-    document.body.appendChild (scriptCdn);
+  componentDidMount() {
+    const script = document.createElement("script");
+    script.src = "/games/flappyBird.js";
+    const scriptCdn = document.createElement("script");
+    scriptCdn.src = "https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.8.0/p5.js";
+    document.body.appendChild(script);
+    document.body.appendChild(scriptCdn);
   }
 
-  render () {
-    console.log (this.state);
+  render() {
+    console.log(this.state);
     return (
       <div className="App">
         <div id="_wrapper">
           <div id="_content">
-            <video id="_webcam" playsInline style={{display: 'none'}} />
+            <video id="_webcam" playsInline style={{ display: "none" }} />
             <canvas id="_imageData" />
             <canvas id="_faceSub" />
             <canvas id="_t3d" />
