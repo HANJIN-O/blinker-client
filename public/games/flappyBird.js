@@ -153,6 +153,20 @@ function draw () {
       pas = true;
     }
   } else {
+
+    let _data = {}; // 보낼 데이터를 객체로
+    // username, score, gametype(어떤 게임인지)
+    fetch(url, {
+      method: 'POST', // or 'PUT'
+      body: JSON.stringify(_data), // data can be `string` or {object}!
+      headers:{
+        'Content-Type': 'application/json'
+      }
+    }).then(res => res.json())
+        .then(response => console.log('Success:', JSON.stringify(response)))
+        .catch(error => console.error('Error:', error));
+
+
     bird.die ();
   }
 
