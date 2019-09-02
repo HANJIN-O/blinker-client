@@ -15,7 +15,8 @@ class Bird {
         // this.y += this.v;
         // this.v += this.a;
 
-        let gameDiv = document.querySelector('#gameContainer');
+        let gameDiv = document.querySelector('#gameOver');
+        gameDiv.style.position = 'absolute';
         gameDiv.style.display = 'block';
         gameDiv.style.zIndex = '1';
     }

@@ -21,6 +21,7 @@ export default class App extends Component {
           </div>
         </div>
         <div id="gameContainer">
+          <div id="gameOver"></div>
           <FlappyBird />
         </div>
       </div>
