@@ -19,8 +19,10 @@ echo "make directory src/shared"
 mkdir src/shared
 echo "make directory src/lib"
 mkdir src/lib
+touch src/lib/.gitignore
 echo "make directory src/components"
 mkdir src/components
+touch src/lib/.gitignore
 echo "make directory src/client"
 mkdir src/client
 mkdir src/clinet/Root.js
