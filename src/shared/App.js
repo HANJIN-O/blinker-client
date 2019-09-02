@@ -3,7 +3,6 @@ import React, { Component } from "react";
 export default class App extends Component {
   constructor() {
     super();
-    this.state = { score: 0 };
   }
 
   componentDidMount() {
@@ -17,7 +16,6 @@ export default class App extends Component {
   }
 
   render() {
-    console.log(this.state);
     return (
       <div className="App">
         <div id="_wrapper">

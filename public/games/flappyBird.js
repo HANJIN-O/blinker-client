@@ -75,10 +75,12 @@ class Pipe {
   }
 
   show () {
-    noStroke ();
-    fill (27, 201, 18);
-    rect (this.x, 0, this.w, this.topY);
-    rect (this.x, this.botY, this.w, height - this.botY);
+    if (!death) {
+      noStroke ();
+      fill (27, 201, 18);
+      rect (this.x, 0, this.w, this.topY);
+      rect (this.x, this.botY, this.w, height - this.botY);
+    }
   }
 }
 
@@ -114,56 +116,54 @@ function setup () {
 }
 
 function draw () {
-  background (28, 39, 165);
-  if (death) {
-    respawn ();
-    death = false;
-  }
-  if (frameCount % 100 == 0) {
-    for (let i = 0; i < 10; i++)
-      stars.push (new Star (width));
-  }
-  if (frameCount % 175 == 0) {
-    pipes.push (new Pipe (width));
-  }
-  let sc = 0;
-  for (let star of stars) {
-    if (!death) star.update ();
-    if (star.x <= 0) {
-      stars.splice (sc, 1);
+  if (death === false) {
+    background (28, 39, 165);
+    if (frameCount % 100 == 0) {
+      for (let i = 0; i < 10; i++)
+        stars.push (new Star (width));
     }
-    sc++;
-    star.show ();
-  }
-  for (let c = 0; c < pipes.length; c++) {
-    if (!death) pipes[c].update ();
-    if (pipes[c].x + pipes[c].w < 0) {
-      pipes.splice (c, 1);
-      pas = false;
+    if (frameCount % 175 == 0) {
+      pipes.push (new Pipe (width));
     }
-    pipes[c].show ();
-  }
-  if (!death && pipes[0].coll (bird)) {
-    death = true;
-  }
-  if (!death) {
-    bird.update ();
-    if (bird.x - bird.d / 2 > pipes[0].x + pipes[0].w && !pas) {
-      score++;
-      pas = true;
+    let sc = 0;
+    for (let star of stars) {
+      if (!death) star.update ();
+      if (star.x <= 0) {
+        stars.splice (sc, 1);
+      }
+      sc++;
+      star.show ();
     }
-  } else {
-    bird.die ();
+    for (let c = 0; c < pipes.length; c++) {
+      if (!death) pipes[c].update ();
+      if (pipes[c].x + pipes[c].w < 0) {
+        pipes.splice (c, 1);
+        pas = false;
+      }
+      pipes[c].show ();
+    }
+    if (!death && pipes[0].coll (bird)) {
+      death = true;
+    }
+    if (!death) {
+      bird.update ();
+      if (bird.x - bird.d / 2 > pipes[0].x + pipes[0].w && !pas) {
+        score++;
+        pas = true;
+      }
+    } else {
+      bird.die ();
+    }
+
+    fill (255);
+    textSize (36);
+    text ('' + score, 40, 50);
+
+    bird.show ();
+    fill (200, 100, 0);
+
+    rect (0, height - 50, width, 50);
   }
-
-  fill (255);
-  textSize (36);
-  text ('' + score, 40, 50);
-
-  bird.show ();
-  fill (200, 100, 0);
-
-  rect (0, height - 50, width, 50);
 }
 
 function keyPressed () {
@@ -173,12 +173,4 @@ function keyPressed () {
   if (key == 'p') {
     noLoop ();
   }
-}
-
-function respawn () {
-  pipes = [];
-  stars = [];
-  score = 0;
-  bird = new Bird ();
-  pipes.push (new Pipe (width));
 }
