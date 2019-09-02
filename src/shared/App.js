@@ -1,18 +1,9 @@
 import React, { Component } from "react";
+import FlappyBird from "../components/FlappyBird";
 
 export default class App extends Component {
   constructor() {
     super();
-  }
-
-  componentDidMount() {
-    const scriptCdn = document.createElement("script");
-    scriptCdn.src = "https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.8.0/p5.js";
-    document.body.appendChild(scriptCdn);
-
-    const script = document.createElement("script");
-    script.src = "/games/flappyBird.js";
-    document.body.appendChild(script);
   }
 
   render() {
@@ -28,6 +19,9 @@ export default class App extends Component {
             <canvas id="_drawing" />
             <div id="_progressBar" />
           </div>
+        </div>
+        <div id="gameContainer">
+          <FlappyBird />
         </div>
       </div>
     );

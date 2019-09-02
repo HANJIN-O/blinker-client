@@ -1,4 +1,4 @@
-require('../css/flappy_bird.css');
+
 
 class Bird {
     constructor() {
@@ -16,7 +16,8 @@ class Bird {
         // this.v += this.a;
 
         let gameDiv = document.querySelector('#gameContainer');
-        gameDiv.classList.add("game_over");
+        gameDiv.style.display = 'block';
+        gameDiv.style.zIndex = '1';
     }
 
     update() {
