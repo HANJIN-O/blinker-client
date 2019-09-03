@@ -7,9 +7,15 @@ const Header = () => {
   return (
     <div>
       <div className="menu">
-        <NavBar>USERNAME</NavBar>
-        <NavBar>HIGHEST SCORE</NavBar>
-        <NavBar>RANKING</NavBar>
+        <NavBar>
+          <span>USERNAME</span>
+        </NavBar>
+        <NavBar>
+          <span>HIGHEST SCORE</span>
+        </NavBar>
+        <NavBar>
+          <span>RANKING</span>
+        </NavBar>
       </div>
     </div>
   );
