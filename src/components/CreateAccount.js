@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 const CreateAccount = () => {
   return (
     <div>
-      <Link to="/">Home</Link>
+      <Link to="/createAccount">Create Account</Link>
     </div>
   );
 };
