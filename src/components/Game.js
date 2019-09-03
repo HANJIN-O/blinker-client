@@ -4,6 +4,26 @@ import "./Game.css";
 import ButtonNav from "../components/ButtonNav";
 
 const Game = () => {
+  var e = document.createEvent("HTMLEvents");
+  e.initEvent("TestEvent", true, true);
+
+  (() => {
+    // 이벤트 리스너 등록
+    document.addEventListener(
+      "TestEvent",
+      // eslint-disable-next-line no-unused-vars
+      function(e) {
+        add();
+      },
+      false
+    );
+  })();
+  let num = 0;
+  const add = () => {
+    num += 1;
+    console.log(num);
+  };
+
   return (
     <div>
       <div className="container">
