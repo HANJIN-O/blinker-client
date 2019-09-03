@@ -27,12 +27,6 @@ class Home extends Component {
           <Header />
           <Route path="/home/ranking" component={Ranking} />
           <Route path="/home/flappyBird" component={Game} />
-          <Link to={`/home/flappyBird`}>
-            <button>flappyBird</button>
-          </Link>
-          <Link to={`/home/ranking`}>
-            <button>ranking</button>
-          </Link>
         </div>
       );
     } else {

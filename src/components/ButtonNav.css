@@ -1,0 +1,19 @@
+.container{
+    display : flex;
+    justify-content: center;
+    align-content: center;
+}
+
+.btn-nav-item{
+
+}
+.btn-nav-item:nth-child(1){
+    margin: 20px;
+    order:2;
+}
+.btn-nav-item:nth-child(2){
+    margin: 20px;
+    order:1;
+}
+
+
