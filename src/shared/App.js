@@ -6,7 +6,6 @@ import SignOut from "../components/SignOut";
 import Game from "../components/Game";
 import Ranking from "../components/Ranking";
 import CreateAccount from "../components/CreateAccount";
-import FlappyBird from "../components/FlappyBird";
 import Play from "../components/Play";
 import TempHome from "../components/TempHome";
 
@@ -29,25 +28,8 @@ export default class App extends Component {
             <Route path="/play" component={Play} />
             <Route path="/tempHome" component={TempHome} />
           </Switch>
-          <div id="_wrapper">
-            <div id="_content">
-              <video id="_webcam" playsInline style={{ display: "none" }} />
-              <canvas id="_imageData" />
-              <canvas id="_faceSub" />
-              <canvas id="_t3d" />
-              <canvas id="_f3d" />
-              <canvas id="_drawing" />
-              <div id="_progressBar" />
-            </div>
-          </div>
-          <div id="gameContainer">
-            <div id="gameOver"></div>
-            <FlappyBird />
-          </div>
         </div>
       </Router>
     );
   }
 }
-
-//* video, span 전부 flappyBird로 옮기기.

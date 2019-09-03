@@ -5,6 +5,7 @@ export default class FlappyBird extends Component {
     const scriptCdn = document.createElement("script");
     scriptCdn.src = "https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.8.0/p5.js";
     document.body.appendChild(scriptCdn);
+    window.loadFlappyBird();
 
     const script = document.createElement("script");
     script.src = "/games/flappyBird.js";
@@ -12,6 +13,6 @@ export default class FlappyBird extends Component {
   }
 
   render() {
-    return <div>here</div>;
+    return <div>flappybird</div>;
   }
 }
