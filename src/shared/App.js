@@ -1,51 +1,19 @@
 import React, { Component } from "react";
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import Home from "../components/Home";
-import SignIn from "../components/SignIn";
-import SignOut from "../components/SignOut";
-import Game from "../components/Game";
-import Ranking from "../components/Ranking";
-import CreateAccount from "../components/CreateAccount";
-import FlappyBird from "../components/FlappyBird";
-import Play from "../components/Play";
-import TempHome from "../components/TempHome";
+import { Route, Switch } from "react-router-dom";
+import Home from "../pages/Home";
+import CreateAccount from "../pages/CreateAccount";
+import SignIn from "../pages/SignIn";
 
 export default class App extends Component {
-  constructor() {
-    super();
-  }
-
   render() {
     return (
-      <Router>
-        <div className="App">
-          <Switch>
-            <Route path="/" exact component={SignIn} />
-            <Route path="/menu" exact component={Home} />
-            <Route path="/signOut" exact component={SignOut} />
-            <Route path="/createAccount" component={CreateAccount} />
-            <Route path="/game" component={Game} />
-            <Route path="/ranking" component={Ranking} />
-            <Route path="/play" component={Play} />
-            <Route path="/tempHome" component={TempHome} />
-          </Switch>
-          <div id="_wrapper">
-            <div id="_content">
-              <video id="_webcam" playsInline style={{ display: "none" }} />
-              <canvas id="_imageData" />
-              <canvas id="_faceSub" />
-              <canvas id="_t3d" />
-              <canvas id="_f3d" />
-              <canvas id="_drawing" />
-              <div id="_progressBar" />
-            </div>
-          </div>
-          <div id="gameContainer">
-            <div id="gameOver"></div>
-            <FlappyBird />
-          </div>
-        </div>
-      </Router>
+      <div>
+        <Switch>
+          <Route exact path="/" component={Home} />
+          <Route path="/login" component={SignIn} />
+          <Route path="/signup" component={CreateAccount} />
+        </Switch>
+      </div>
     );
   }
 }
