@@ -20,8 +20,8 @@ export default class App extends Component {
       <Router>
         <div className="App">
           <Switch>
-            <Route path="/" exact component={Home} />
-            <Route path="/signIn" exact component={SignIn} />
+            <Route path="/" exact component={SignIn} />
+            <Route path="/menu" exact component={Home} />
             <Route path="/signOut" exact component={SignOut} />
             <Route path="/createAccount" component={CreateAccount} />
             <Route path="/game" component={Game} />
