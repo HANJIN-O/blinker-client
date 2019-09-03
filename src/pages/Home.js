@@ -24,18 +24,15 @@ class Home extends Component {
     if (this.state.loggedIn) {
       content = (
         <div>
-          <Header /> 
+          <Header />
+          <Route path="/home/ranking" component={Ranking} />
+          <Route path="/home/flappyBird" component={FlappyBirdGame} />
           <Link to={`/home/flappyBird`}>
             <button>flappyBird</button>
           </Link>
-
           <Link to={`/home/ranking`}>
             <button>ranking</button>
           </Link>
-
-          {/*<ButtonNav />*/}
-          <Route path="/home/ranking" component={Ranking} />
-          <Route path="/home/flappyBird" component={FlappyBirdGame} />
         </div>
       );
     } else {

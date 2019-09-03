@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Link } from "react-router-dom";
 import FlappyBird from "../components/FlappyBird";
 
 class FlappyBirdGame extends Component {
@@ -8,6 +9,10 @@ class FlappyBirdGame extends Component {
   render() {
     return (
       <div className="container">
+        <Link to={`/home/flappyBird`}>
+          <button>flappyBird</button>
+        </Link>
+
         <div id="_wrapper">
           <div id="_content">
             <video id="_webcam" playsinline style={{ display: "none" }} />
