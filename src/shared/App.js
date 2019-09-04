@@ -1,21 +1,23 @@
 import React, { Component } from "react";
-import { Route, Switch } from "react-router-dom";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Home from "../pages/Home";
-import CreateAccount from "../pages/CreateAccount";
 import SignIn from "../pages/SignIn";
+import CreateAccount from "../pages/CreateAccount";
 
 export default class App extends Component {
   render() {
     return (
-      <div>
-        <Switch>
-          <Route exact path="/" component={Home} />
-          <Route path="/login" component={SignIn} />
-          <Route path="/signup" component={CreateAccount} />
-        </Switch>
-      </div>
+      <Router>
+        <div className="App">
+          <Switch>
+            {/*<Route path="/game" component={Game} />*/}
+            {/*<Route path="/signOut" component={SignOut} />*/}
+            <Route path="/home" component={Home} />
+            <Route path="/signup" component={CreateAccount} />
+            <Route path="/" exact component={SignIn} />
+          </Switch>
+        </div>
+      </Router>
     );
   }
 }
-
-//* video, span 전부 flappyBird로 옮기기.

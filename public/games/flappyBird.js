@@ -14,11 +14,8 @@ class Bird {
     die() {
         // this.y += this.v;
         // this.v += this.a;
-
-        let gameDiv = document.querySelector('#gameOver');
-        gameDiv.style.position = 'absolute';
-        gameDiv.style.display = 'block';
-        gameDiv.style.zIndex = '1';
+        document.getElementById ('game-play-screen-gameover').style.display =
+            'block';
     }
 
     update() {
@@ -117,7 +114,8 @@ let score = 0;
 let pas = false;
 
 function setup() {
-    createCanvas(700, 500);
+    var birdCanvas = createCanvas (640, 480);
+    birdCanvas.parent ('game-play-screen');
     bird = new Bird();
     pipes.push(new Pipe(width));
 }
@@ -163,15 +161,15 @@ function draw() {
             // username, score, gametype(어떤 게임인지)
             let cookie = document.cookie;
 
-            fetch(url, {
-                method: 'POST', // or 'PUT'
-                body: JSON.stringify(getDataFromCookie(cookie)), // data can be `string` or {object}!
-                headers: {
-                    'Content-Type': 'application/json'
-                }
-            }).then(res => res.json())
-                .then(response => console.log('Success:', JSON.stringify(response)))
-                .catch(error => console.error('Error:', error));
+            // fetch(url, {
+            //     method: 'POST', // or 'PUT'
+            //     body: JSON.stringify(getDataFromCookie(cookie)), // data can be `string` or {object}!
+            //     headers: {
+            //         'Content-Type': 'application/json'
+            //     }
+            // }).then(res => res.json())
+            //     .then(response => console.log('Success:', JSON.stringify(response)))
+            //     .catch(error => console.error('Error:', error));
 
             bird.die();
         }

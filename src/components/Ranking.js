@@ -4,7 +4,9 @@ import { Link } from "react-router-dom";
 const Ranking = () => {
   return (
     <div>
-      <Link to="/">Home</Link>
+      <Link to={`/home/ranking`}>
+        <button>ranking</button>
+      </Link>
     </div>
   );
 };

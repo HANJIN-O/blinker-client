@@ -1,11 +1,14 @@
 (function exampleCode () {
   'use strict';
+
   brfv4Example.initCurrentExample = function (brfManager, resolution) {
     brfManager.init (resolution, resolution, brfv4Example.appId);
   };
 
   brfv4Example.updateCurrentExample = function (brfManager, imageData, draw) {
     brfManager.update (imageData);
+
+
 
     draw.clear ();
 
@@ -123,6 +126,7 @@
   function blink () {
     _blinked = true;
     bird.jump ();
+    document.dispatchEvent(new Event('TestEvent'));
 
     if (_timeOut > -1) {
       clearTimeout (_timeOut);
