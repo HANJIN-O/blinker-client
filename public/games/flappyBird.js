@@ -1,4 +1,7 @@
-
+console.log("flappyBird called");
+let p5Script = document.createElement("script");
+p5Script.src = "https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.8.0/p5.js";
+document.body.appendChild(p5Script);
 
 class Bird {
     constructor() {
