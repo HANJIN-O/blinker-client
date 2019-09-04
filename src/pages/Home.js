@@ -1,13 +1,13 @@
 import React, { Component } from "react";
-import { Route, Redirect } from "react-router-dom";
-import Ranking from "../components/Ranking";
+import { Route, Link, Redirect, Switch } from "react-router-dom";
 import Header from "../components/Header";
 import Game from "../components/Game";
+import "../stylesheet/Home.css";
 
 //* 지금은 Home 이지만 게임 페이지 - Play 가 될부분? 합치기
 class Home extends Component {
   // eslint-disable-next-line no-unused-vars
-  constructor(props) {
+  constructor(props, match) {
     super();
     this.state = {
       loggedIn: true
@@ -25,8 +25,35 @@ class Home extends Component {
       content = (
         <div>
           <Header />
-          <Route path="/home/flappyBird" component={Game} />
-          <Route path="/home/ranking" component={Ranking} />
+          <div className={`home-container`}>
+            <div className={`home-item`}>
+              <h1>Flappy Bird</h1>
+              <img src={``} alt={``}/>
+              <p>Flappy Bird is a side-scrolling mobile game featuring 2D retro style graphics. The objective is to direct a flying bird, named "Faby", who moves continuously to the right, between sets of Mario-like pipes. If the player touches the pipes, they lose.</p>
+              <Link to={`/game/flappyBird`}>
+                <input type={`button`} className={`home-btn`}>
+                </input>
+              </Link>
+            </div>
+            <div className={`home-item`}>
+              <h1>Flappy Bird</h1>
+              <img src={``} alt={``}/>
+              <p>Flappy Bird is a side-scrolling mobile game featuring 2D retro style graphics. The objective is to direct a flying bird, named "Faby", who moves continuously to the right, between sets of Mario-like pipes. If the player touches the pipes, they lose.</p>
+              <Link to={`/game/flappyBird`}>
+                <input type={`button`} className={`home-btn`}>
+                </input>
+              </Link>
+            </div>
+            <div className={`home-item`}>
+              <h1>Flappy Bird</h1>
+              <img src={``} alt={``}/>
+              <p>Flappy Bird is a side-scrolling mobile game featuring 2D retro style graphics. The objective is to direct a flying bird, named "Faby", who moves continuously to the right, between sets of Mario-like pipes. If the player touches the pipes, they lose.</p>
+              <Link to={`/game/flappyBird`}>
+                <input type={`button`} className={`home-btn`}>
+                </input>
+              </Link>
+            </div>
+          </div>
         </div>
       );
     } else {
