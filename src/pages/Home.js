@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Link, Route, Redirect } from "react-router-dom";
+import { Route, Redirect } from "react-router-dom";
 import Ranking from "../components/Ranking";
 import Header from "../components/Header";
 import Game from "../components/Game";
