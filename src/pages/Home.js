@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Link, Route, Redirect } from "react-router-dom";
+import { Route, Redirect } from "react-router-dom";
 import Ranking from "../components/Ranking";
 import Header from "../components/Header";
 import Game from "../components/Game";
@@ -25,8 +25,8 @@ class Home extends Component {
       content = (
         <div>
           <Header />
-          <Route path="/home/ranking" component={Ranking} />
           <Route path="/home/flappyBird" component={Game} />
+          <Route path="/home/ranking" component={Ranking} />
         </div>
       );
     } else {

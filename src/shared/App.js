@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Home from "../pages/Home";
 import SignIn from "../pages/SignIn";
 import CreateAccount from "../pages/CreateAccount";
+import NotFound from "../components/NotFound";
 
 export default class App extends Component {
   render() {
@@ -14,7 +15,8 @@ export default class App extends Component {
             {/*<Route path="/signOut" component={SignOut} />*/}
             <Route path="/home" component={Home} />
             <Route path="/signup" component={CreateAccount} />
-            <Route path="/" exact component={SignIn} />
+            <Route exact path="/" component={SignIn} />
+            <Route component={NotFound} />
           </Switch>
         </div>
       </Router>
