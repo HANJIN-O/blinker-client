@@ -25,8 +25,8 @@ class Home extends Component {
       content = (
         <div>
           <Header />
-          <Route path="/home/ranking" component={Ranking} />
           <Route path="/home/flappyBird" component={Game} />
+          <Route path="/home/ranking" component={Ranking} />
         </div>
       );
     } else {
