@@ -2,12 +2,21 @@ import React from "react";
 import { Link } from "react-router-dom";
 import "../stylesheet/Button.css";
 
-export default function Button() {
+export default function Button(props) {
+  const btnClick = e => {
+    props.post(props.username, props.password);
+  };
+
   return (
     <div>
-      <Link to={`/game/flappyBird`}>
-        <input type={`button`} className={`home-btn`}></input>
-      </Link>
+      <input
+        id={props.id}
+        type={props.type}
+        className={props.class}
+        name={props.name}
+        value={props.value}
+        onClick={btnClick}
+      />
     </div>
   );
 }
