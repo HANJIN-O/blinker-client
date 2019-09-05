@@ -1,10 +1,10 @@
 import React, { Component } from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import Home from "../pages/Home";
+import Game from "../pages/Game";
 import SignIn from "../pages/SignIn";
-import CreateAccount from "../pages/CreateAccount";
+import SignUp from "../pages/SignUp";
 import NotFound from "../components/NotFound";
-import GameMenu from "../pages/GameMenu";
+// import GameMenu from "../pages/GameMenu";
 
 export default class App extends Component {
   render() {
@@ -14,9 +14,8 @@ export default class App extends Component {
           <Switch>
             {/*<Route path="/game" component={Game} />*/}
             {/*<Route path="/signOut" component={SignOut} />*/}
-            <Route path="/game" component={GameMenu} />
-            <Route path="/home" component={Home} />
-            <Route path="/signup" component={CreateAccount} />
+            <Route path="/game" component={Game} />
+            <Route path="/signup" component={SignUp} />
             <Route exact path="/" component={SignIn} />
             <Route component={NotFound} />
           </Switch>

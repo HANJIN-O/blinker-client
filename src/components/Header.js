@@ -1,4 +1,6 @@
 import React from "react";
+import { Link } from "react-router-dom";
+import Ranking from "../components/Ranking";
 import "./Header.css";
 
 // eslint-disable-next-line
@@ -14,7 +16,9 @@ const Header = () => {
           <span>HIGHEST SCORE</span>
         </NavBar>
         <NavBar>
-          <span>RANKING</span>
+          <Link to="/game/ranking">
+            <span>RANKING</span>
+          </Link>
         </NavBar>
       </div>
     </div>

@@ -19,7 +19,7 @@ export default class Ranking extends Component {
       },
       data: {
         username: "",
-        score: ""
+        score: 0
       }
     })
       .then(res => {
@@ -38,13 +38,13 @@ export default class Ranking extends Component {
         <h2>Blinker</h2>
         <h3>User Ranking</h3>
         <div>
-          {/* {this.state.userInfo.map((userdata, i) => (
+          {this.state.userInfo.map((userdata, i) => (
             <div className="userRankingInfo">
               {" "}
               <span key={i}>{userdata.username}</span>{" "}
               <span>{userdata.score}</span>{" "}
             </div>
-          ))} */}
+          ))}
         </div>
         <Link to={"/Home/flappybird"}>
           <button>Go back to Game</button>

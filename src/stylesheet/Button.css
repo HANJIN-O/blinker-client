@@ -1,0 +1,6 @@
+.home-btn{
+    background-image: url("/img/button.svg");
+    background-repeat: no-repeat;
+    width: 330px;
+    height: 60px;
+}

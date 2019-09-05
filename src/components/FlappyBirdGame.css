@@ -22,11 +22,13 @@
 }
 
 #game-play-screen{
+    position: relative;
 }
 
 #game-play-screen-gameover {
     background: #000;
     width: 100%;
+    height: 100%;
     /*height: 480px;*/
     position: absolute;
     z-index: 999;
