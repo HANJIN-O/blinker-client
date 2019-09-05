@@ -19,7 +19,7 @@ export default class Ranking extends Component {
       },
       data: {
         username: "",
-        score: ""
+        score: 0
       }
     })
       .then(res => {
