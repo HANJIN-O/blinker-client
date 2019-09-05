@@ -15,11 +15,8 @@ class Bird {
   }
 
   die() {
-    // this.y += this.v;
-    // this.v += this.a;
     document.getElementById("game-play-screen-gameover").style.display =
       "block";
-    document.dispatchEvent(new CustomEvent("birdGameOver", {}, true));
   }
 
   update() {
@@ -157,9 +154,7 @@ function draw() {
       bird.update();
       if (bird.x - bird.d / 2 > pipes[0].x + pipes[0].w && !pas) {
         score++;
-        document.dispatchEvent(
-          new CustomEvent("birdScore", { detail: { birdscore: score } }, true)
-        );
+        window.reactMethod.updateScore();
 
         pas = true;
       }
