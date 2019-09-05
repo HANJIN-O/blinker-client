@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Game from "../pages/Game";
 import SignIn from "../pages/SignIn";
-import CreateAccount from "../pages/CreateAccount";
+import SignUp from "../pages/SignUp";
 import NotFound from "../components/NotFound";
 // import GameMenu from "../pages/GameMenu";
 
@@ -15,7 +15,7 @@ export default class App extends Component {
             {/*<Route path="/game" component={Game} />*/}
             {/*<Route path="/signOut" component={SignOut} />*/}
             <Route path="/game" component={Game} />
-            <Route path="/signup" component={CreateAccount} />
+            <Route path="/signup" component={SignUp} />
             <Route exact path="/" component={SignIn} />
             <Route component={NotFound} />
           </Switch>
