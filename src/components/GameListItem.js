@@ -13,7 +13,14 @@ export default class GameListItem extends Component {
           moves continuously to the right, between sets of Mario-like pipes. If
           the player touches the pipes, they lose.
         </p>
-        <Button />
+        <Button
+          id={`login-btn`}
+          class={`submit-btn txtb`}
+          type={`submit`}
+          name={`signin`}
+          value={``}
+          btnType={`START`}
+        />
       </div>
     );
   }

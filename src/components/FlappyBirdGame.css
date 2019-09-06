@@ -21,6 +21,12 @@
     order:1;
 }
 
+/*점수*/
+.game-score{
+    text-align: center;
+}
+
+/*게임스크린*/
 #game-play-screen{
     position: relative;
 }
@@ -36,7 +42,7 @@
     color: #fff;
 }
 
-
+/*웹캠*/
 #_wrapper, #_webcam, #_imageData, #_faceSub, #_t3d, #_f3d, #_drawing, #_progressBar{
     position: absolute;
     top: 0px;
