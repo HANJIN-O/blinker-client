@@ -19,6 +19,6 @@ export default class FlappyBird extends Component {
     loadScript();
   }
   render() {
-    return <div>flappybird</div>;
+    return <div></div>;
   }
 }
