@@ -7,11 +7,15 @@ import React, { Component } from "react";
 class FlappyBirdGame extends Component {
   constructor() {
     super();
-    this.e = document.createEvent("HTMLEvents");
-    this.e.initEvent("bridScore", true, true);
     this.state = {
       score: 0
     };
+    window.reactMethod = this;
+  }
+
+  updateScore() {
+    this.setState({ score: this.state.score + 1 });
+    console.log(this.state);
   }
 
   post() {
@@ -30,27 +34,6 @@ class FlappyBirdGame extends Component {
       .catch(error => {
         console.log(error);
       });
-  }
-
-  componentDidMount() {
-    // 이트 리스너 등록
-    document.addEventListener(
-      "birdScore",
-      // eslint-disable-next-line no-unused-vars
-      e => {
-        this.setState(() => {
-          return { score: e.detail.birdscore };
-        });
-      },
-      false
-    );
-
-    document.addEventListener(
-      "birdGameOver",
-      // eslint-disable-next-line no-unused-vars
-      this.post,
-      false
-    );
   }
 
   render() {
