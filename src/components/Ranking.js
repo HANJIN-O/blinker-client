@@ -19,7 +19,7 @@ export default class Ranking extends Component {
   //* componentWillMount DOM manipulation X
   //* serverSide rendering => componentWillMount
   componentDidMount() {
-    let url = `http://ec2-13-209-35-43.ap-northeast-2.compute.amazonaws.com`;
+    let url = `http://ec2-13-209-35-43.ap-northeast-2.compute.amazonaws.com:5000`;
 
     axios({
       url: `${url}/getrank`,
