@@ -5,12 +5,17 @@ import { Redirect } from "react-router";
 import axios from "axios";
 
 class SignIn extends Component {
-  state = {
-    name: "",
-    password: "",
-    error: false,
-    helperText: ""
-  };
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      name: "",
+      password: "",
+      error: false,
+      ok: false
+      // helperText: ""
+    };
+  }
 
   handleChange = e => {
     this.setState({
@@ -18,73 +23,125 @@ class SignIn extends Component {
     });
   };
 
-  post(id, pwd) {
+  post = (id, pwd) => {
     console.log(id, pwd);
 
     axios
-      .post("/signin", {
+      .post(`http://13.209.35.43:5000/signin`, {
         username: id,
         password: pwd
       })
       .then(res => {
-        console.log("로그인성공", res);
-        if (res.status === 200) return <Redirect to={`/`} />;
+        if (res.status === 200) {
+          console.log("로그인성공", res);
+          this.setState({ ok: true });
+          // window.location = "/game";
+        }
       })
       .catch(err => {
-        console.log("에러", err);
-        this.setState({ helperText: "USERNAME OR PASSWORD IS INCORRECT" });
-        // return self.setState({
-        //     error: true
-        // })
+        console.log("로그인 실패", err);
+        // this.setState({ helperText: "USERNAME OR PASSWORD IS INCORRECT" });
+        // // return self.setState({
+        // //     error: true
+        // // })
       });
-  }
+  };
 
   render() {
     let content = "";
-    content = (
-      <div className={`login-container`}>
-        <div className={`login-header`}>BLINKER</div>
-        <div className={`login-box`}>
-          <form className={`login-form`}>
-            <h3> PLEASE SIGNIN TO START THE GAME</h3>
-            <input
-              className={`txtb`}
-              placeholder={`Username`}
-              type={`text`}
-              value={this.state.name}
-              onChange={this.handleChange}
-              name={`name`}
-            />
-            <input
-              className={`txtb`}
-              placeholder={`Password`}
-              type={`password`}
-              value={this.state.password}
-              onChange={this.handleChange}
-              name={`password`}
-            />
-            <p id="helperText">{this.state.helperText}</p>
-            <Button
-              id={`login-btn`}
-              class={`submit-btn txtb`}
-              type={`submit`}
-              name={`signin`}
-              value={``}
-              username={this.state.name}
-              password={this.state.password}
-              post={this.post}
-            />
-            <Button
-              id={`signup-btn`}
-              class={`submit-btn txtb`}
-              type={`submit`}
-              name={`signUp`}
-              value={``}
-            />
-          </form>
+    if (this.state.ok) {
+      return <Redirect to="/game" />;
+    }else if (this.state.error) {
+      content = (
+        <div className={`login-container`}>
+          <div className={`login-header`}>BLINKER</div>
+          <div className={`login-box`}>
+            <form className={`login-form`}>
+              <h3> PLEASE SIGNIN TO START THE GAME</h3>
+              <input
+                className={`txtb`}
+                placeholder={`Username`}
+                type={`text`}
+                value={this.state.name}
+                onChange={this.handleChange}
+                name={`name`}
+              />
+              <input
+                className={`txtb`}
+                placeholder={`Password`}
+                type={`password`}
+                value={this.state.password}
+                onChange={this.handleChange}
+                name={`password`}
+              />
+              <h1>Wrong ID AND PASSWORD!!!!</h1>
+              <Button
+                id={`login-btn`}
+                class={`submit-btn txtb`}
+                type={`submit`}
+                name={`signin`}
+                value={``}
+                username={this.state.name}
+                password={this.state.password}
+                post={this.post}
+              />
+              <Button
+                id={`signup-btn`}
+                class={`submit-btn txtb`}
+                type={`submit`}
+                name={`signUp`}
+                value={``}
+              />
+            </form>
+          </div>
         </div>
-      </div>
-    );
+      );
+    } else {
+      content = (
+        <div className={`login-container`}>
+          <div className={`login-header`}>BLINKER</div>
+          <div className={`login-box`}>
+            <form className={`login-form`}>
+              <h3> PLEASE SIGNIN TO START THE GAME</h3>
+              <input
+                className={`txtb`}
+                placeholder={`Username`}
+                type={`text`}
+                value={this.state.name}
+                onChange={this.handleChange}
+                name={`name`}
+              />
+              <input
+                className={`txtb`}
+                placeholder={`Password`}
+                type={`password`}
+                value={this.state.password}
+                onChange={this.handleChange}
+                name={`password`}
+              />
+              <Button
+                id={`login-btn`}
+                class={`submit-btn txtb`}
+                type={`submit`}
+                name={`signin`}
+                value={``}
+                username={this.state.name}
+                password={this.state.password}
+                post={this.post}
+              />
+              <Button
+                id={`signup-btn`}
+                class={`submit-btn txtb`}
+                type={`submit`}
+                name={`signUp`}
+                value={``}
+              />
+            </form>
+          </div>
+        </div>
+      );
+    }
+
     return <div>{content}</div>;
   }
 }

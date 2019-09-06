@@ -1,5 +1,4 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import "../stylesheet/Button.css";
 
 export default function Button(props) {
