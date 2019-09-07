@@ -5,11 +5,12 @@
 .home-item{
     width: 399px;
     height: 653px;
-    justify-content: center;
+    text-align: center;
 }
 
 .home-item:nth-child(1){
     flex : 1;
+
 }
 
 .home-item:nth-child(2){

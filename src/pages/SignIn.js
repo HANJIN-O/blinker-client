@@ -40,10 +40,10 @@ class SignIn extends Component {
       })
       .catch(err => {
         console.log("로그인 실패", err);
-        // this.setState({ helperText: "USERNAME OR PASSWORD IS INCORRECT" });
-        // // return self.setState({
-        // //     error: true
-        // // })
+        this.setState({ helperText: "USERNAME OR PASSWORD IS INCORRECT" });
+        // return self.setState({
+        //     error: true
+        // })
       });
   };
 
@@ -51,10 +51,10 @@ class SignIn extends Component {
     let content = "";
     if (this.state.ok) {
       return <Redirect to="/game" />;
-    }else if (this.state.error) {
+    }else {
       content = (
         <div className={`login-container`}>
-          <div className={`login-header`}>BLINKER</div>
+          <div className={`login-header`}></div>
           <div className={`login-box`}>
             <form className={`login-form`}>
               <h3> PLEASE SIGNIN TO START THE GAME</h3>
@@ -74,67 +74,25 @@ class SignIn extends Component {
                 onChange={this.handleChange}
                 name={`password`}
               />
-              <h1>Wrong ID AND PASSWORD!!!!</h1>
+              {this.state.helperText ? <h1>{this.state.helperText}</h1> : ''}
               <Button
                 id={`login-btn`}
-                class={`submit-btn txtb`}
+                class={`signin-btn`}
                 type={`submit`}
                 name={`signin`}
-                value={``}
+                value={`SIGN IN`}
+                btnType={`SIGN IN`}
                 username={this.state.name}
                 password={this.state.password}
                 post={this.post}
               />
               <Button
                 id={`signup-btn`}
-                class={`submit-btn txtb`}
+                class={`create-an-account-btn`}
                 type={`submit`}
                 name={`signUp`}
                 value={``}
-              />
-            </form>
-          </div>
-        </div>
-      );
-    } else {
-      content = (
-        <div className={`login-container`}>
-          <div className={`login-header`}>BLINKER</div>
-          <div className={`login-box`}>
-            <form className={`login-form`}>
-              <h3> PLEASE SIGNIN TO START THE GAME</h3>
-              <input
-                className={`txtb`}
-                placeholder={`Username`}
-                type={`text`}
-                value={this.state.name}
-                onChange={this.handleChange}
-                name={`name`}
-              />
-              <input
-                className={`txtb`}
-                placeholder={`Password`}
-                type={`password`}
-                value={this.state.password}
-                onChange={this.handleChange}
-                name={`password`}
-              />
-              <Button
-                id={`login-btn`}
-                class={`submit-btn txtb`}
-                type={`submit`}
-                name={`signin`}
-                value={``}
-                username={this.state.name}
-                password={this.state.password}
-                post={this.post}
-              />
-              <Button
-                id={`signup-btn`}
-                class={`submit-btn txtb`}
-                type={`submit`}
-                name={`signUp`}
-                value={``}
+                btnType={`CREATE AN ACCOUNT`}
               />
             </form>
           </div>

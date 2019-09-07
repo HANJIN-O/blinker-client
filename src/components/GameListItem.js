@@ -15,10 +15,10 @@ export default class GameListItem extends Component {
         </p>
         <Button
           id={`login-btn`}
-          class={`submit-btn txtb`}
+          class={`start-flappy-btn txtb`}
           type={`submit`}
           name={`signin`}
-          value={``}
+          value={`START`}
           btnType={`START`}
         />
       </div>

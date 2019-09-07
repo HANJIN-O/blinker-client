@@ -61,3 +61,7 @@ ranking-item-row-header-item{
     flex:3;
     text-align: right;
 }
+
+.ranking-item-row-info{
+    margin-top: 10px;
+}

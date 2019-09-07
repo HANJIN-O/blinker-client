@@ -10,6 +10,7 @@ const ButtonNav = () => {
       <div className="container">
         <div className={`btn-nav-item`}>
           <button
+            id={`restart-btn`}
             onClick={() => {
               window.location.reload(false);
             }}
@@ -18,7 +19,7 @@ const ButtonNav = () => {
           </button>
         </div>
         <div className={`btn-nav-item`}>
-          <button>
+          <button id={`goback-btn`}>
             <NavLink to="/">Go Back</NavLink>
           </button>
         </div>

@@ -3,12 +3,23 @@ import "./FlappyBirdGame.css";
 import ButtonNav from "./ButtonNav";
 import axios from "axios";
 import React, { Component } from "react";
+import { withCookies, Cookies } from 'react-cookie';
+import { instanceOf } from "prop-types";
+
 
 class FlappyBirdGame extends Component {
-  constructor() {
-    super();
+
+  static propTypes = {
+    cookies: instanceOf(Cookies).isRequired
+  };
+
+
+  constructor(props) {
+    super(props);
+    const { cookies } = props;
     this.state = {
-      score: 0
+      score: 0,
+      username: cookies.get('username') || 'DOOPAL'
     };
     window.reactMethod = this;
   }
@@ -27,7 +38,7 @@ class FlappyBirdGame extends Component {
       url: `${url}/score`,
       method: "post",
       data: {
-        username: "doopal", // userId는 signin할때 props로 내려줘야겠죠.
+        username: this.state.username || "doopal", // userId는 signin할때 props로 내려줘야겠죠.
         gamename: "flappybird", // 현재는 게임이 한개라서 하드 코딩하는데 이 gameId는 어디서 관리할지 모르겠네요.
         score: this.state.score
       }
@@ -43,6 +54,7 @@ class FlappyBirdGame extends Component {
   render() {
     return (
       <div>
+        <div className={`game-info`}>FLAPPYBIRD</div>
         <div className={`game-score`}>
           <span>SCORE:{this.state.score}</span>
         </div>
@@ -75,4 +87,4 @@ class FlappyBirdGame extends Component {
   }
 }
 
-export default FlappyBirdGame;
+export default withCookies(FlappyBirdGame);
