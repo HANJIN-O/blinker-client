@@ -63,7 +63,7 @@ class SignUp extends Component {
       console.log("done false");
       content = (
         <div className={`login-container`}>
-          <div className={`login-header`}>BLINKER</div>
+          <div className={`login-header`}></div>
           <div className={`login-box`}>
             <form className={`login-form`}>
               <h3> PLEASE SIGNIN TO START THE GAME</h3>
@@ -93,10 +93,11 @@ class SignUp extends Component {
               />
               <Button
                 id={`login-btn`}
-                class={`submit-btn txtb`}
+                class={`signup-btn txtb`}
                 type={`submit`}
                 name={`signUp`}
-                value={``}
+                value={`SIGN UP`}
+                btnType={`SIGN UP`}
                 username={this.state.name}
                 password={this.state.password}
                 post={this.post}
@@ -116,7 +117,7 @@ class SignUp extends Component {
       console.log("error true");
       content = (
         <div className={`login-container`}>
-          <div className={`login-header`}>BLINKER</div>
+          <div className={`login-header`}></div>
           <div className={`login-box`}>
             <form className={`login-form`}>
               <h3> PLEASE SIGNIN TO START THE GAME</h3>
@@ -145,8 +146,8 @@ class SignUp extends Component {
                 name={`confirmPassword`}
               />
               <Button
-                id={`login-btn`}
-                class={`submit-btn txtb`}
+                id={`signup-btn`}
+                class={`signup-btn txtb`}
                 type={`submit`}
                 name={`signUp`}
                 value={``}

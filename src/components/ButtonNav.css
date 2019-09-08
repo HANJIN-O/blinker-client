@@ -9,11 +9,24 @@
 }
 .btn-nav-item:nth-child(1){
     margin: 20px;
-    order:2;
 }
 .btn-nav-item:nth-child(2){
     margin: 20px;
-    order:1;
 }
 
 
+#restart-btn{
+    background-image: url("/img/red.svg");
+    color: #ffffff;
+    width: 330px;
+    height: 60px;
+    font-size: 24px;
+}
+
+#goback-btn{
+    background-image: url("/img/button.svg");
+    color: #ffffff;
+    width: 330px;
+    height: 60px;
+    font-size: 24px;
+}

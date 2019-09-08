@@ -4,3 +4,46 @@
     width: 330px;
     height: 60px;
 }
+
+.signin-btn{
+    background-image: url("/img/red.svg");
+    background-repeat: no-repeat;
+    color: #ffffff;
+    width: 330px;
+    height: 60px;
+    font-size: 24px;
+    object-fit: contain;
+}
+
+
+
+.create-an-account-btn{
+    background-image: url("/img/button.svg");
+    background-repeat: no-repeat;
+    color: #ffffff;
+    width: 330px;
+    height: 60px;
+    font-size: 24px;
+    object-fit: contain;
+}
+
+.signup-btn{
+    background-image: url("/img/red.svg");
+    background-repeat: no-repeat;
+    color: #ffffff;
+    width: 330px;
+    height: 60px;
+    font-size: 24px;
+    object-fit: contain;
+}
+
+.start-flappy-btn{
+    background-image: url("/img/red.svg");
+    background-repeat: no-repeat;
+    color: #ffffff;
+    width: 330px;
+    height: 60px;
+    font-size: 24px;
+    object-fit: contain;
+}
+

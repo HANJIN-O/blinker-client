@@ -7,28 +7,38 @@
     font-size: 1rem;
     color: #282c34;
     line-height: 3.5rem;
-    text-align: center;
     cursor: pointer;
     transition: background-color 0.3s;
     text-decoration: none;
 }
 
 .menu-item:nth-child(1){
-    flex:1;
+    flex:3;
 }
 
 .menu-item:nth-child(2){
     flex:6;
+    text-align: center;
 }
 
 .menu-item:nth-child(3){
-    flex:1;
+    flex:3;
+    padding-right: 30px;
+    text-align: right;
 }
 
+.header-blink{
+    background-image: url("/img/logo.jpg");
+    background-size: cover;
+    width: 260px;
+    height: 49px;
+    object-fit: contain;
+}
 /*.menu-item:hover {*/
 /*    background-color:  #495057 ;*/
 /*}*/
 /*.menu-item:active, .menu-item.active {*/
 /*    background-color:  #1862ab ;*/
 /*}*/
+
 

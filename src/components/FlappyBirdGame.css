@@ -26,6 +26,12 @@
     text-align: center;
 }
 
+.game-info{
+    text-align: center;
+}
+
+
+
 /*게임스크린*/
 #game-play-screen{
     position: relative;

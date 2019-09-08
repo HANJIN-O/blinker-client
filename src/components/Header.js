@@ -10,14 +10,15 @@ const Header = () => {
     <div>
       <div className="menu">
         <NavBar>
-          <span>USERNAME</span>
+          {/*<span>USERNAME</span>*/}
+          <div className={`header-blink`}></div>
         </NavBar>
         <NavBar>
-          <span>HIGHEST SCORE</span>
+          <div>HIGHEST SCORE</div>
         </NavBar>
         <NavBar>
           <Link to="/game/ranking">
-            <span>RANKING</span>
+            <div>RANKING</div>
           </Link>
         </NavBar>
       </div>

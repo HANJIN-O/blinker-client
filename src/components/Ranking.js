@@ -41,8 +41,8 @@ export default class Ranking extends Component {
       <div className={`ranking-container`}>
         <div className={`ranking-item`}>
           <div className={`ranking-item-row`}>
-            <div className={`ranking-item-row-info`}>Blinker</div>
-            <div className={`ranking-item-row-info`}>User Ranking</div>
+            <div className={`ranking-item-row-info`}>RANKING</div>
+            <div className={`ranking-item-row-info`}>TOP 10 PLAYERS</div>
           </div>
           <div className={`ranking-item-row`}>
             <div className={`ranking-item-row-header`}>
@@ -54,7 +54,7 @@ export default class Ranking extends Component {
           <div className={`ranking-item-row`}>
             {this.state.userInfo.map((userdata, i) => (
               <div key={i} className={`ranking-item-row-body`}>
-                <div className={`ranking-item-row-body-item`}></div>
+                <div className={`ranking-item-row-body-item`}>{i+1}</div>
                 <div className={`ranking-item-row-body-item`}>
                   {userdata.username}
                 </div>

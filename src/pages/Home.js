@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import GameListItem from "../components/GameListItem"
+import "../stylesheet/Home.css";
 
 export default class Home extends Component {
   render() {
