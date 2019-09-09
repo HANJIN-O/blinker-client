@@ -1,25 +1,23 @@
 import FlappyBird from "./FlappyBird";
-import "./FlappyBirdGame.css";
+import "../stylesheet/FlappyBirdGame.css";
 import ButtonNav from "./ButtonNav";
 import axios from "axios";
 import React, { Component } from "react";
-import { withCookies, Cookies } from 'react-cookie';
+import { withCookies, Cookies } from "react-cookie";
 import { instanceOf } from "prop-types";
-
+import url from "../lib/server";
 
 class FlappyBirdGame extends Component {
-
   static propTypes = {
     cookies: instanceOf(Cookies).isRequired
   };
-
 
   constructor(props) {
     super(props);
     const { cookies } = props;
     this.state = {
       score: 0,
-      username: cookies.get('username') || 'DOOPAL'
+      username: cookies.get("username") || "DOOPAL"
     };
     window.reactMethod = this;
   }
@@ -32,7 +30,6 @@ class FlappyBirdGame extends Component {
   // 이 함수는 /public/game/flappyBird.js에 die()함수에서 호출할 겁니다.
   // 그래서 게임이 끝났을때 서버로 요청을 보낼겁니당.
   post() {
-    let url = `http://ec2-13-209-35-43.ap-northeast-2.compute.amazonaws.com:5000`;
     console.log("포스트!!!!");
     axios({
       url: `${url}/score`,

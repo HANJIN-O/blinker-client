@@ -1,39 +1,39 @@
-.container{
-    display : flex;
+.container {
+    display: flex;
     justify-content: center;
     align-content: center;
 }
 
-.item{
+.item {}
 
-}
-.item:nth-child(1){
+.item:nth-child(1) {
     width: 640px;
     height: 480px;
-    position:relative;
+    position: relative;
     margin: 20px;
-    order:2;
+    order: 2;
 }
-.item:nth-child(2){
+
+.item:nth-child(2) {
     width: 640px;
     height: 480px;
     margin: 20px;
-    order:1;
+    order: 1;
 }
 
 /*점수*/
-.game-score{
+.game-score {
     text-align: center;
 }
 
-.game-info{
+.game-info {
     text-align: center;
 }
 
 
 
 /*게임스크린*/
-#game-play-screen{
+#game-play-screen {
     position: relative;
 }
 
@@ -49,7 +49,14 @@
 }
 
 /*웹캠*/
-#_wrapper, #_webcam, #_imageData, #_faceSub, #_t3d, #_f3d, #_drawing, #_progressBar{
+#_wrapper,
+#_webcam,
+#_imageData,
+#_faceSub,
+#_t3d,
+#_f3d,
+#_drawing,
+#_progressBar {
     position: absolute;
     top: 0px;
     left: 0px;

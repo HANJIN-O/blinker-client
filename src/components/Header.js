@@ -1,7 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import Ranking from "../components/Ranking";
-import "./Header.css";
+import "../stylesheet/Header.css";
 
 // eslint-disable-next-line
 const NavBar = ({ children }) => <div className="menu-item">{children}</div>;

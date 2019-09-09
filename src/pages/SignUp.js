@@ -1,7 +1,8 @@
 import React, { Component } from "react";
 import Button from "../components/Button";
-import { Redirect, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 import axios from "axios";
+import url from "../lib/server";
 
 class SignUp extends Component {
   constructor(props) {
@@ -25,7 +26,7 @@ class SignUp extends Component {
   post = (id, pwd) => {
     console.log(id, pwd);
     axios
-      .post(`http://13.209.35.43:5000/signup`, {
+      .post(`${url}/signup`, {
         username: id,
         password: pwd
       })

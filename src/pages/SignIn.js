@@ -3,6 +3,7 @@ import "../stylesheet/SignIn.css";
 import Button from "../components/Button";
 import { Redirect } from "react-router";
 import axios from "axios";
+import url from "../lib/server";
 // import axiosCookieJarSupport from "axios-cookiejar-support";
 // import tough from "tough-cookie";
 
@@ -19,7 +20,6 @@ class SignIn extends Component {
     };
   }
 
-
   handleChange = e => {
     this.setState({
       [e.target.name]: e.target.value
@@ -33,7 +33,7 @@ class SignIn extends Component {
 
     axios
       .post(
-        `http://localhost:5000/signin`,
+        `${url}/signin`,
         {
           username: id,
           password: pwd
