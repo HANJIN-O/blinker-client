@@ -29,9 +29,6 @@ class SignIn extends Component {
   post = (id, pwd) => {
     console.log(id, pwd);
 
-    // const cookieJar = new tough.CookieJar();
-    let url = `http://13.209.35.43:5000`;
-
     axios
       .post(
         `${url}/signin`,
@@ -73,16 +70,16 @@ class SignIn extends Component {
             <form className={`login-form`}>
               <h3> PLEASE SIGNIN TO START THE GAME</h3>
               <input
-                className={`txtb`}
-                placeholder={`Username`}
+                className={`input-login input-id`}
+                placeholder={`USERNAME`}
                 type={`text`}
                 value={this.state.name}
                 onChange={this.handleChange}
                 name={`name`}
               />
               <input
-                className={`txtb`}
-                placeholder={`Password`}
+                className={`input-login`}
+                placeholder={`PASSWORD`}
                 type={`password`}
                 value={this.state.password}
                 onChange={this.handleChange}
@@ -91,7 +88,7 @@ class SignIn extends Component {
               {this.state.helperText ? <h1>{this.state.helperText}</h1> : ""}
               <Button
                 id={`login-btn`}
-                class={`signin-btn`}
+                class={`button button-red button-signin`}
                 type={`submit`}
                 name={`signin`}
                 value={`SIGN IN`}
@@ -102,10 +99,10 @@ class SignIn extends Component {
               />
               <Button
                 id={`signup-btn`}
-                class={`create-an-account-btn`}
+                class={`button button-blue button-create-an-account`}
                 type={`submit`}
                 name={`signUp`}
-                value={``}
+                value={`CREATE AN ACCOUNT`}
                 btnType={`CREATE AN ACCOUNT`}
               />
             </form>

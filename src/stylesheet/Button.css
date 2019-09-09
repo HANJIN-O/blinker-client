@@ -67,41 +67,6 @@
     margin: 1em auto;
 }
 
-.signin-btn{
-    background-image: url("/img/button-red.png");
-    width: 330px;
-    height: 60px;
-    color: #fff;
-    border: none;
-    background-color: transparent;
-    display: block;
-    margin: 1em auto;
-}
-
-
-
-.create-an-account-btn{
-    background-image: url("/img/button-blue.png");
-    width: 330px;
-    height: 60px;
-    color: #fff;
-    border: none;
-    background-color: transparent;
-    display: block;
-    margin: 1em auto;
-}
-
-.signup-btn{
-    background-image: url("/img/button-red.png");
-    width: 330px;
-    height: 60px;
-    color: #fff;
-    border: none;
-    background-color: transparent;
-    display: block;
-    margin: 1em auto;
-}
-
 .start-flappy-btn{
     background-image: url("/img/button-red.png");
     width: 330px;
@@ -130,6 +95,35 @@
 
 .button-red{
     background-image: url("/img/button-red.png");
+}
+
+
+
+/*/src/pages/SignUp.js*/
+.button-signup{
+    margin-top: 50px;
+    font-size: 24px;
+    font-weight: normal;
+}
+
+/*/src/pages/SignIn.js */
+.button-signin{
+    margin-top: 58px;
+    font-size: 24px;
+    font-weight: normal;
+}
+
+/*/src/pages/SignIn.js */
+.button-create-an-account{
+    margin-top: 20px;
+    font-size: 24px;
+    font-weight: normal;
+}
+
+.button-home{
+    margin-top: 103px;
+    font-size: 24px;
+    font-weight: normal;
 }
 
 /*.button-red {*/

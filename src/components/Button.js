@@ -33,6 +33,8 @@ class Button extends Component {
       return <Redirect to={`/game/flappyBird`} />
     } else if(this.state.btnRender === 'CREATE AN ACCOUNT' ){
       return <Redirect to={`/signup`} />
+    } else if(this.state.btnRender === 'HOME') {
+      return <Redirect to={`/`} />
     }else {
       content = (
         <div>

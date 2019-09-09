@@ -42,7 +42,8 @@ class SignUp extends Component {
         }
         console.log("에러", err);
         this.setState({
-          error: true
+          error: true,
+          helperText: "USERNAME ALREADY EXISTS"
         });
       });
   };
@@ -52,49 +53,63 @@ class SignUp extends Component {
     if (this.state.done) {
       console.log("done true");
       content = (
-        <div>
-          <h1>SIGN UP</h1>
-          <p>THANKS FOR SIGNING UP! PLEASE ENJOY BLINKER</p>
-          <div>
-            <Link to="/game">GO PLAY</Link>
+        <div className={`login-container`}>
+          <div className={`login-header`}></div>
+          <div className={`login-done`}>
+            <h3>SIGN UP</h3>
+            <p>THANKS FOR SIGNING UP!</p>
+            <p>PLEASE ENJOY BLINKER</p>
+            <Button
+              class={`button button-red button-home`}
+              type={`submit`}
+              name={`signUp`}
+              value={`HOME`}
+              btnType={`HOME`}
+            />
           </div>
         </div>
       );
-    } else if (!this.state.done) {
+    } else {
       console.log("done false");
       content = (
         <div className={`login-container`}>
           <div className={`login-header`}></div>
           <div className={`login-box`}>
             <form className={`login-form`}>
-              <h3> PLEASE SIGNIN TO START THE GAME</h3>
+              <h3>SIGN UP</h3>
               <input
-                className={`txtb`}
-                placeholder={`Username`}
+                className={`input-login input-id`}
+                placeholder={`USERNAME`}
                 type={`text`}
                 value={this.state.name}
                 onChange={this.handleChange}
                 name={`name`}
               />
               <input
-                className={`txtb`}
-                placeholder={`Password`}
+                className={`input-login`}
+                placeholder={`PASSWORD`}
                 type={`password`}
                 value={this.state.password}
                 onChange={this.handleChange}
                 name={`password`}
               />{" "}
               <input
-                className={`txtb`}
-                placeholder={`ConfirmPassword`}
+                className={`input-login`}
+                placeholder={`CONFIRMPASSWORD`}
                 type={`password`}
                 value={this.state.confirmPassword}
                 onChange={this.handleChange}
                 name={`confirmPassword`}
               />
+              <div>
+                {this.state.helperText ? (
+                  <div>{this.state.helperText}</div>
+                ) : (
+                  ""
+                )}
+              </div>
               <Button
-                id={`login-btn`}
-                class={`signup-btn`}
+                class={`button button-red button-signup`}
                 type={`submit`}
                 name={`signUp`}
                 value={`SIGN UP`}
@@ -103,66 +118,6 @@ class SignUp extends Component {
                 password={this.state.password}
                 post={this.post}
               />
-              {/* <input
-              id={`signup-btn`}
-              className={`submit-btn txtb`}
-              type={`submit`}
-              name={`signUp`}
-              value={``}
-            /> */}
-            </form>
-          </div>
-        </div>
-      );
-    } else if (this.state.error) {
-      console.log("error true");
-      content = (
-        <div className={`login-container`}>
-          <div className={`login-header`}></div>
-          <div className={`login-box`}>
-            <form className={`login-form`}>
-              <h3> PLEASE SIGNIN TO START THE GAME</h3>
-              <input
-                className={`txtb`}
-                placeholder={`Username`}
-                type={`text`}
-                value={this.state.name}
-                onChange={this.handleChange}
-                name={`name`}
-              />
-              <input
-                className={`txtb`}
-                placeholder={`Password`}
-                type={`password`}
-                value={this.state.password}
-                onChange={this.handleChange}
-                name={`password`}
-              />{" "}
-              <input
-                className={`txtb`}
-                placeholder={`ConfirmPassword`}
-                type={`password`}
-                value={this.state.confirmPassword}
-                onChange={this.handleChange}
-                name={`confirmPassword`}
-              />
-              <Button
-                id={`signup-btn`}
-                class={`signup-btn txtb`}
-                type={`submit`}
-                name={`signUp`}
-                value={``}
-                username={this.state.name}
-                password={this.state.password}
-                post={this.post}
-              />
-              {/* <input
-              id={`signup-btn`}
-              className={`submit-btn txtb`}
-              type={`submit`}
-              name={`signUp`}
-              value={``}
-            /> */}
             </form>
           </div>
         </div>
