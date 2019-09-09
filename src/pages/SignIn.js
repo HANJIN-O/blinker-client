@@ -3,6 +3,8 @@ import "../stylesheet/SignIn.css";
 import Button from "../components/Button";
 import { Redirect } from "react-router";
 import axios from "axios";
+// import axiosCookieJarSupport from "axios-cookiejar-support";
+// import tough from "tough-cookie";
 
 class SignIn extends Component {
   constructor(props) {
@@ -17,6 +19,7 @@ class SignIn extends Component {
     };
   }
 
+
   handleChange = e => {
     this.setState({
       [e.target.name]: e.target.value
@@ -26,15 +29,25 @@ class SignIn extends Component {
   post = (id, pwd) => {
     console.log(id, pwd);
 
+    // const cookieJar = new tough.CookieJar();
+
     axios
-      .post(`http://13.209.35.43:5000/signin`, {
-        username: id,
-        password: pwd
-      })
+      .post(
+        `http://localhost:5000/signin`,
+        {
+          username: id,
+          password: pwd
+        },
+        {
+          // jar: cookieJar,
+          withCredentials: true
+        }
+      )
       .then(res => {
         if (res.status === 200) {
           console.log("로그인성공", res);
           this.setState({ ok: true });
+          // console.log(cookieJar);
           // window.location = "/game";
         }
       })
@@ -51,7 +64,7 @@ class SignIn extends Component {
     let content = "";
     if (this.state.ok) {
       return <Redirect to="/game" />;
-    }else {
+    } else {
       content = (
         <div className={`login-container`}>
           <div className={`login-header`}></div>
@@ -74,7 +87,7 @@ class SignIn extends Component {
                 onChange={this.handleChange}
                 name={`password`}
               />
-              {this.state.helperText ? <h1>{this.state.helperText}</h1> : ''}
+              {this.state.helperText ? <h1>{this.state.helperText}</h1> : ""}
               <Button
                 id={`login-btn`}
                 class={`signin-btn`}
