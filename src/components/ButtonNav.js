@@ -1,5 +1,5 @@
 import React from "react";
-import { NavLink } from "react-router-dom";
+import { Link } from "react-router-dom";
 import "../stylesheet/ButtonNav.css";
 
 //* Restart, Go Back 고정 버튼 부분.
@@ -10,7 +10,8 @@ const ButtonNav = () => {
       <div className="container">
         <div className={`btn-nav-item`}>
           <button
-            id={`restart-btn`}
+            // id={`restart-btn`}
+            className={`button button-blue`}
             onClick={() => {
               window.location.reload(false);
             }}
@@ -19,8 +20,11 @@ const ButtonNav = () => {
           </button>
         </div>
         <div className={`btn-nav-item`}>
-          <button id={`goback-btn`}>
-            <NavLink to="/">Go Back</NavLink>
+          <button
+            // id={`goback-btn`}
+            className={`button button-red `}
+          >
+            <Link to="/">Go Back</Link>
           </button>
         </div>
       </div>

@@ -94,7 +94,7 @@ class SignUp extends Component {
               />
               <Button
                 id={`login-btn`}
-                class={`signup-btn txtb`}
+                class={`signup-btn`}
                 type={`submit`}
                 name={`signUp`}
                 value={`SIGN UP`}

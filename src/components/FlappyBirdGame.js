@@ -24,13 +24,12 @@ class FlappyBirdGame extends Component {
 
   updateScore() {
     this.setState({ score: this.state.score + 1 });
-    console.log(this.state);
   }
 
   // 이 함수는 /public/game/flappyBird.js에 die()함수에서 호출할 겁니다.
   // 그래서 게임이 끝났을때 서버로 요청을 보낼겁니당.
   post() {
-    console.log("포스트!!!!");
+
     axios({
       url: `${url}/score`,
       method: "post",
