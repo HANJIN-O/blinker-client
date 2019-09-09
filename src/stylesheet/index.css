@@ -8,9 +8,20 @@ body {
   background-color: #010035;
   background-image: url('/img/background.png');
   background-position: center bottom;
+  background-repeat: no-repeat;
+  padding-bottom: 40px;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+
+a {
+  text-decoration: none !important;
+  color: inherit;
+}
+
+img {
+  max-width: 100%;
 }

@@ -25,7 +25,6 @@
 /*점수*/
 .game-score {
   text-align: center;
-  font-family: ArcadeClassic;
   font-size: 19px;
   font-weight: normal;
   font-style: normal;
@@ -38,7 +37,6 @@
 
 .game-info {
   text-align: center;
-  font-family: ArcadeClassic;
   font-size: 40px;
   font-weight: normal;
   font-style: normal;
@@ -65,7 +63,6 @@
   z-index: 999;
   display: none;
   color: #fff;
-  font-family: ArcadeClassic;
   font-size: 100px;
   font-weight: normal;
   font-style: normal;
