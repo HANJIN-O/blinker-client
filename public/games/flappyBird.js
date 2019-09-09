@@ -107,7 +107,6 @@ class Star {
     circle(this.x, this.y, 3);
   }
 }
-
 // ---------------------------------
 
 let bird;

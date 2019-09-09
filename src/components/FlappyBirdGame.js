@@ -29,7 +29,6 @@ class FlappyBirdGame extends Component {
   // 이 함수는 /public/game/flappyBird.js에 die()함수에서 호출할 겁니다.
   // 그래서 게임이 끝났을때 서버로 요청을 보낼겁니당.
   post() {
-
     axios({
       url: `${url}/score`,
       method: "post",
@@ -70,7 +69,13 @@ class FlappyBirdGame extends Component {
           </div>
           <div className={`item`}>
             <div id="game-play-screen">
-              <div id="game-play-screen-gameover">GAME OVER</div>
+              <div id="game-play-screen-gameover">
+                <div id="game-over-text">GAME OVER</div>
+              </div>
+              {/* <div id="game-play-screen-gameover">
+                <div id="game-play-screen-game">GAME</div>
+                <div id="game-play-screen-over">OVER</div>
+              </div> */}
             </div>
             <FlappyBird />
           </div>
