@@ -65,7 +65,9 @@ class SignIn extends Component {
     } else {
       content = (
         <div className={`login-container`}>
-          <div className={`login-header`}></div>
+          <div className={`login-header`}>
+            <img src="/img/logo.png" alt="logo" />
+          </div>
           <div className={`login-box`}>
             <form className={`login-form`}>
               <h3> PLEASE SIGNIN TO START THE GAME</h3>
