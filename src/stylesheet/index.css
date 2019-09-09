@@ -1,11 +1,11 @@
-@font-face {
+/* @font-face {
   font-family: "arcade";
   src: url("/assets/ARCADECLASSIC.TTF");
-}
+} */
 
 body {
   margin: 0;
-  /* font-family: "arcade", sans-serif; 여기를 살리면 폰트가 적용 됩니다 */
+  /* font-family: "arcade", sans-serif; 여기랑 위에 font-face를 살리면 폰트가 적용 됩니다 그리고 바로 밑에 font-family: sans-serif; 를 주석처리해주세요*/
   font-family: sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
