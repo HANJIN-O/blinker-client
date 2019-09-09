@@ -53,6 +53,8 @@
   -webkit-box-shadow: 10px 10px 0px 0px rgba(0, 255, 223, 1);
   -moz-box-shadow: 10px 10px 0px 0px rgba(0, 255, 223, 1);
   box-shadow: 10px 10px 0px 0px rgba(0, 255, 223, 1);
+  height: 480px;
+  background: #000;
 }
 #game-play-screen-gameover {
   background: #000;
