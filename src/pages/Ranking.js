@@ -3,6 +3,7 @@ import axios from "axios";
 import { Link } from "react-router-dom";
 import "../stylesheet/Ranking.css";
 import url from "../lib/server";
+import Button from "../components/Button";
 
 const Dummy = [
   { username: "이찬행", score: 10 },
@@ -40,7 +41,7 @@ export default class Ranking extends Component {
       <div className={`ranking-container`}>
         <div className={`ranking-item`}>
           <div className={`ranking-item-row`}>
-            <div className={`ranking-item-row-info`}>RANKING</div>
+            <div className={`page-title`}>RANKING</div>
             <div className={`ranking-item-row-info`}>TOP 10 PLAYERS</div>
           </div>
           <div className={`ranking-item-row`}>
@@ -64,8 +65,13 @@ export default class Ranking extends Component {
             ))}
           </div>
           <div className={`ranking-item-row`}>
-            <Link to={"/Home/flappybird"}>
-              <button>Go back to Game</button>
+            <Link to={"/game/flappybird"}>
+              <Button
+                class={`button button-blue`}
+                value={`Go back to Game`}
+                type={`submit`}
+                btnType={`GOBACKTOGAME`}
+              ></Button>
             </Link>
           </div>
         </div>

@@ -2,9 +2,8 @@ import React, { Component } from "react";
 import { Route, Redirect, Switch } from "react-router-dom";
 import Header from "../components/Header";
 import FlappyBirdGame from "../components/FlappyBirdGame";
-import { Home, NotFound } from "../pages";
+import { Home, NotFound, Ranking } from "../pages";
 import "../stylesheet/Home.css";
-import Ranking from "../components/Ranking";
 
 //* 지금은 Home 이지만 게임 페이지 - Play 가 될부분? 합치기
 class Game extends Component {
