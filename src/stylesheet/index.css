@@ -17,6 +17,7 @@ body {
   min-height: 900px;
   padding-bottom: 40px;
   font-size: 24px;
+  background-size: 100%;
 }
 
 code {

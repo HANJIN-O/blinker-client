@@ -2,7 +2,7 @@
 /*/src/pages/SignIn.js*/
 .login-header{
     position: absolute;
-    top: 20%;
+    top: 120px;
     left: 50%;
     transform: translate(-50%, -50%);
 }
@@ -21,7 +21,7 @@
 /*/src/pages/SignIn.js*/
 .login-form{
     position: absolute;
-    top: 60%;
+    top: 430px;
     left: 50%;
     transform: translate(-50%, -50%);
     text-align: center;

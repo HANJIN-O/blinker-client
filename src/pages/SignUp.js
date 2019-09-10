@@ -23,29 +23,45 @@ class SignUp extends Component {
     });
   };
 
-  post = (id, pwd) => {
-    console.log(id, pwd);
-    axios
-      .post(`${url}/signup`, {
-        username: id,
-        password: pwd
-      })
-      .then(res => {
-        console.log("회원가입", res);
-        if (res.status === 200) {
-          this.setState({ done: true });
-        }
-      })
-      .catch(err => {
-        if (err.response) {
-          console.log("err", err.response.data);
-        }
-        console.log("에러", err);
+  post = (id, pwd, cpwd) => {
+    console.log(id, pwd, cpwd);
+    let usernameRegex = /^[a-zA-Z0-9]+$/;
+    var validfirstUsername = id.match(usernameRegex);
+    if (pwd === cpwd) {
+      if (validfirstUsername) {
+        axios
+          .post(`${url}/signup`, {
+            username: id,
+            password: pwd
+          })
+          .then(res => {
+            console.log("회원가입", res);
+            if (res.status === 200) {
+              this.setState({ done: true });
+            }
+          })
+          .catch(err => {
+            if (err.response) {
+              console.log("err", err.response.data);
+            }
+            console.log("에러", err);
+            this.setState({
+              error: true,
+              helperText: "USERNAME ALREADY EXISTS"
+            });
+          });
+      } else {
         this.setState({
           error: true,
-          helperText: "USERNAME ALREADY EXISTS"
+          helperText: "USERNAME IS NOT VALID"
         });
+      }
+    } else {
+      this.setState({
+        error: true,
+        helperText: "PLEASE CONFIRM YOUR PASSWORD"
       });
+    }
   };
 
   render() {
@@ -54,7 +70,11 @@ class SignUp extends Component {
       console.log("done true");
       content = (
         <div className={`login-container`}>
-          <div className={`login-header`}></div>
+          <div className={`login-header`}>
+            <Link to="/">
+              <img src="/img/logo.png" alt="logo" />
+            </Link>
+          </div>
           <div className={`login-done`}>
             <h3>SIGN UP</h3>
             <p>THANKS FOR SIGNING UP!</p>
@@ -73,7 +93,11 @@ class SignUp extends Component {
       console.log("done false");
       content = (
         <div className={`login-container`}>
-          <div className={`login-header`}></div>
+          <div className={`login-header`}>
+            <Link to="/">
+              <img src="/img/logo.png" alt="logo" />
+            </Link>
+          </div>
           <div className={`login-box`}>
             <form className={`login-form`}>
               <h3>SIGN UP</h3>
@@ -116,6 +140,7 @@ class SignUp extends Component {
                 btnType={`SIGN UP`}
                 username={this.state.name}
                 password={this.state.password}
+                confirmPassword={this.state.confirmPassword}
                 post={this.post}
               />
             </form>

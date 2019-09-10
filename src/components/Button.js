@@ -26,7 +26,11 @@ class Button extends Component {
   btnClick = e => {
     e.preventDefault();
     if (["SIGN IN", "SIGN UP"].includes(this.props.btnType)) {
-      this.props.post(this.props.username, this.props.password);
+      this.props.post(
+        this.props.username,
+        this.props.password,
+        this.props.confirmPassword
+      );
     } else {
       this.setState({
         btnRender: this.props.btnType
@@ -41,9 +45,9 @@ class Button extends Component {
       return <Redirect to={`/game/flappyBird`} />;
     } else if (this.state.btnRender === "CREATE AN ACCOUNT") {
       return <Redirect to={`/signup`} />;
-    } else if(this.state.btnRender === 'HOME') {
-      return <Redirect to={`/`} />
-    }else {
+    } else if (this.state.btnRender === "HOME") {
+      return <Redirect to={`/`} />;
+    } else {
       content = (
         <div>
           <input
