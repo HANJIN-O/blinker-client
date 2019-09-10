@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import Button from "../components/Button";
 import axios from "axios";
 import url from "../lib/server";
+import { Link } from "react-router-dom";
 
 class SignUp extends Component {
   constructor(props) {
