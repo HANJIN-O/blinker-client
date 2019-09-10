@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import Button from "../components/Button";
-import { Link } from "react-router-dom";
 import axios from "axios";
 import url from "../lib/server";
 

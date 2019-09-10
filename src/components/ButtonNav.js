@@ -20,12 +20,14 @@ const ButtonNav = () => {
           </button>
         </div>
         <div className={`btn-nav-item`}>
-          <button
-            // id={`goback-btn`}
-            className={`button button-red `}
-          >
-            <Link to="/">Go Back</Link>
-          </button>
+          <Link to="/game">
+            <button
+              // id={`goback-btn`}
+              className={`button button-red`}
+            >
+              Go Back
+            </button>
+          </Link>
         </div>
       </div>
     </div>
