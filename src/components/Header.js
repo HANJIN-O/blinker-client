@@ -12,15 +12,18 @@ const Header = () => {
           <img src="/img/logo.png" alt="logo" />
         </Link>
       </div>
+
       <div id="nav-center">
         <span>USERNAME</span>
-        <span>HIGHEST SCORE: NULL</span>
-        <span>
-          <Link to="/game/ranking">RANKING: 1</Link>
-        </span>
       </div>
+
       <div id="nav-right">
-        <Link to="/">LOGOUT</Link>
+        <span>
+          <Link to="/game/ranking">RANKING</Link>
+        </span>
+        <span>
+          <Link to="/">LOGOUT</Link>
+        </span>
       </div>
 
       {/* <div className="center">
