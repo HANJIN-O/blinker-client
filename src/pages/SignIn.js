@@ -43,14 +43,12 @@ class SignIn extends Component {
       .post(`${url}/signin`, {
         username: id,
         password: pwd,
-        key: “secret”
+        key: "secret"
       })
       .then(res => {
         console.log("회원가입", res);
         const { cookies } = this.props;
-        cookies.set("username", id);
-        const temp = cookies.get("username");
-        console.log("쿠키:", temp);
+        document.cookie = `username=${id}`;
         if (res.status === 200) {
           this.setState({ done: true });
         }

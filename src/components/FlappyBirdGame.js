@@ -36,7 +36,7 @@ class FlappyBirdGame extends Component {
         username: this.state.username || "doopal", // userId는 signin할때 props로 내려줘야겠죠.
         gamename: "flappybird", // 현재는 게임이 한개라서 하드 코딩하는데 이 gameId는 어디서 관리할지 모르겠네요.
         score: this.state.score,
-        key: “secret”
+        key: "secret"
       }
     })
       .then(res => {

@@ -17,7 +17,10 @@ class Bird {
   die() {
     document.getElementById("game-play-screen-gameover").style.display =
       "block";
-    cameraStop();
+
+
+    window.cameraStop();
+    console.log('여기는 flappyBird.js');
     //FlappyBirdGame에서 정의한 post를 날립니다.
     // /src/components/FlappyBirdGame.js
     window.reactMethod.post();
