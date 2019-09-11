@@ -10,8 +10,6 @@ import { instanceOf } from "prop-types";
 
 //* 지금은 Home 이지만 게임 페이지 - Play 가 될부분? 합치기
 class Game extends Component {
-
-
   // eslint-disable-next-line no-unused-vars
   constructor(props) {
     super(props);
