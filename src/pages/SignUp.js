@@ -33,7 +33,7 @@ class SignUp extends Component {
           .post(`${url}/signup`, {
             username: id,
             password: pwd,
-            key: “secret”
+            key: "secret"
           })
           .then(res => {
             console.log("회원가입", res);

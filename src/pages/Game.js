@@ -10,50 +10,26 @@ import { instanceOf } from "prop-types";
 
 //* 지금은 Home 이지만 게임 페이지 - Play 가 될부분? 합치기
 class Game extends Component {
-  static propTypes = {
-    cookies: instanceOf(Cookies).isRequired
-  };
+
 
   // eslint-disable-next-line no-unused-vars
   constructor(props) {
     super(props);
-    const { cookies } = this.props;
-    this.state = {
-      loggedIn: cookies.get("username")
-    };
-  }
-
-  componentDidMount() {
-    const { cookies } = this.props;
-    this.state = {
-      loggedIn: cookies.get("username")
-    };
   }
 
   render() {
-    let content = "";
-    if (this.state.loggedIn) {
-      content = (
-        <div>
-          <Header />
-          <Switch>
-            <Route path={`/game/ranking`} component={Ranking} />
-            <Route path={`/game/flappyBird`} component={FlappyBirdGame} />
-            <Route exact path={`/game`} component={Home} />
-            <Route component={NotFound} />
-          </Switch>
-        </div>
-      );
-    } else {
-      content = (
-        <div>
-          <Header />
-          <Switch>
-            <Route component={Badrequest} />
-          </Switch>
-        </div>
-      );
-    }
+    let content = (
+      <div>
+        <Header />
+        <Switch>
+          <Route path={`/game/ranking`} component={Ranking} />
+          <Route path={`/game/flappyBird`} component={FlappyBirdGame} />
+          <Route exact path={`/game`} component={Home} />
+          <Route component={NotFound} />
+        </Switch>
+      </div>
+    );
+
     return <div>{content}</div>;
   }
 }

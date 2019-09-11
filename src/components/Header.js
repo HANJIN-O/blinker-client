@@ -22,7 +22,14 @@ const Header = () => {
           <Link to="/game/ranking">RANKING</Link>
         </span>
         <span>
-          <Link to="/">LOGOUT</Link>
+          <Link
+            to="/"
+            onClick={() => {
+              document.cookie = "";
+            }}
+          >
+            LOGOUT
+          </Link>
         </span>
       </div>
 
