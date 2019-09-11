@@ -16,7 +16,7 @@
 
 
 #restart-btn{
-    background-image: url("/img/red.svg");
+    background-image: url("/img/button-red.png");
     color: #ffffff;
     width: 330px;
     height: 60px;
@@ -24,7 +24,7 @@
 }
 
 #goback-btn{
-    background-image: url("/img/button.svg");
+    background-image: url("/img/button-blue.png");
     color: #ffffff;
     width: 330px;
     height: 60px;

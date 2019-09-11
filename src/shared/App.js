@@ -4,6 +4,11 @@ import { Game, SignUp, SignIn, NotFound } from "../pages";
 // import GameMenu from "../pages/GameMenu";
 
 export default class App extends Component {
+  // eslint-disable-next-line constructor-super
+  constructor(props) {
+    super(props);
+  }
+
   render() {
     return (
       <Router>

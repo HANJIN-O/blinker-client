@@ -127,7 +127,9 @@ var eyeFound = false;
 
   function blink() {
     _blinked = true;
-    bird.jump();
+    if(bird){
+      bird.jump();
+    }
 
     if (_timeOut > -1) {
       clearTimeout(_timeOut);

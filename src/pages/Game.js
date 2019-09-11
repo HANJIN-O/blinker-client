@@ -1,22 +1,33 @@
 import React, { Component } from "react";
-import { Route, Redirect, Switch } from "react-router-dom";
+import { Route, Switch } from "react-router-dom";
 import Header from "../components/Header";
 import FlappyBirdGame from "../components/FlappyBirdGame";
 import { Home, NotFound, Ranking } from "../pages";
 import "../stylesheet/Home.css";
+import Badrequest from "./Badrequest";
+import { withCookies, Cookies } from "react-cookie";
+import { instanceOf } from "prop-types";
 
 //* 지금은 Home 이지만 게임 페이지 - Play 가 될부분? 합치기
 class Game extends Component {
+  static propTypes = {
+    cookies: instanceOf(Cookies).isRequired
+  };
+
   // eslint-disable-next-line no-unused-vars
   constructor(props) {
-    super();
+    super(props);
+    const { cookies } = this.props;
     this.state = {
-      loggedIn: true
+      loggedIn: cookies.get("username")
     };
   }
 
   componentDidMount() {
-    //쿠키에서 state 추가해줄것
+    const { cookies } = this.props;
+    this.state = {
+      loggedIn: cookies.get("username")
+    };
   }
 
   render() {
@@ -34,10 +45,17 @@ class Game extends Component {
         </div>
       );
     } else {
-      return <Redirect to={`/login`} />;
+      content = (
+        <div>
+          <Header />
+          <Switch>
+            <Route component={Badrequest} />
+          </Switch>
+        </div>
+      );
     }
     return <div>{content}</div>;
   }
 }
 
-export default Game;
+export default withCookies(Game);

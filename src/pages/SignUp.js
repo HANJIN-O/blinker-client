@@ -32,7 +32,8 @@ class SignUp extends Component {
         axios
           .post(`${url}/signup`, {
             username: id,
-            password: pwd
+            password: pwd,
+            key: “secret”
           })
           .then(res => {
             console.log("회원가입", res);

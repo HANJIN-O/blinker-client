@@ -4,10 +4,16 @@ import Button from "../components/Button";
 import { Redirect } from "react-router";
 import axios from "axios";
 import url from "../lib/server";
+import { instanceOf } from "prop-types";
+import { withCookies, Cookies } from "react-cookie";
 // import axiosCookieJarSupport from "axios-cookiejar-support";
 // import tough from "tough-cookie";
 
 class SignIn extends Component {
+  static propTypes = {
+    cookies: instanceOf(Cookies).isRequired
+  };
+
   constructor(props) {
     super(props);
 
@@ -15,7 +21,7 @@ class SignIn extends Component {
       name: "",
       password: "",
       error: false,
-      ok: false
+      done: false
       // helperText: ""
     };
   }
@@ -28,39 +34,42 @@ class SignIn extends Component {
 
   post = (id, pwd) => {
     console.log(id, pwd);
+    const data = {
+      username: id,
+      password: pwd
+    };
 
     axios
-      .post(
-        `${url}/signin`,
-        {
-          username: id,
-          password: pwd
-        },
-        {
-          // jar: cookieJar,
-          withCredentials: true
-        }
-      )
+      .post(`${url}/signin`, {
+        username: id,
+        password: pwd,
+        key: “secret”
+      })
       .then(res => {
+        console.log("회원가입", res);
+        const { cookies } = this.props;
+        cookies.set("username", id);
+        const temp = cookies.get("username");
+        console.log("쿠키:", temp);
         if (res.status === 200) {
-          console.log("로그인성공", res);
-          this.setState({ ok: true });
-          // console.log(cookieJar);
-          // window.location = "/game";
+          this.setState({ done: true });
         }
       })
       .catch(err => {
-        console.log("로그인 실패", err);
-        this.setState({ helperText: "USERNAME OR PASSWORD IS INCORRECT" });
-        // return self.setState({
-        //     error: true
-        // })
+        if (err.response) {
+          console.log("err", err.response.data);
+        }
+        console.log("에러", err);
+        this.setState({
+          error: true,
+          helperText: "USERNAME ALREADY EXISTS"
+        });
       });
   };
 
   render() {
     let content = "";
-    if (this.state.ok) {
+    if (this.state.done) {
       return <Redirect to="/game" />;
     } else {
       content = (
@@ -117,4 +126,4 @@ class SignIn extends Component {
   }
 }
 
-export default SignIn;
+export default withCookies(SignIn);
