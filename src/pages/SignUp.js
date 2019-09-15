@@ -27,6 +27,15 @@ class SignUp extends Component {
     console.log(id, pwd, cpwd);
     let usernameRegex = /^[a-zA-Z0-9]+$/;
     var validfirstUsername = id.match(usernameRegex);
+
+    if (id === "") {
+      this.setState({
+        error: true,
+        helperText: "AT LEAST 4 LETTERS ON ID"
+      });
+      return;
+    }
+
     if (pwd === cpwd) {
       if (validfirstUsername) {
         axios

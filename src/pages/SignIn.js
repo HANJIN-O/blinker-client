@@ -34,10 +34,16 @@ class SignIn extends Component {
 
   post = (id, pwd) => {
     console.log(id, pwd);
-    const data = {
-      username: id,
-      password: pwd
-    };
+
+    // eslint-disable-next-line no-empty
+    if (id === "") {
+      this.setState({
+        error: true,
+        helperText: "AT LEAST 4 LETTERS ON ID"
+      });
+
+      return;
+    }
 
     axios
       .post(`${url}/signin`, {
@@ -48,7 +54,8 @@ class SignIn extends Component {
       .then(res => {
         console.log("회원가입", res);
         const { cookies } = this.props;
-        document.cookie = `username=${id}`;
+        cookies.set(`username`, id);
+        // document.cookie = `username=${id}`;
         if (res.status === 200) {
           this.setState({ done: true });
         }
