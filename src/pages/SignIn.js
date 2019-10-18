@@ -33,9 +33,6 @@ class SignIn extends Component {
   };
 
   post = (id, pwd) => {
-    console.log(id, pwd);
-
-    // eslint-disable-next-line no-empty
     if (id === "") {
       this.setState({
         error: true,
@@ -52,10 +49,8 @@ class SignIn extends Component {
         key: "secret"
       })
       .then(res => {
-        console.log("회원가입", res);
         const { cookies } = this.props;
         cookies.set(`username`, id);
-        // document.cookie = `username=${id}`;
         if (res.status === 200) {
           this.setState({ done: true });
         }
@@ -64,7 +59,6 @@ class SignIn extends Component {
         if (err.response) {
           console.log("err", err.response.data);
         }
-        console.log("에러", err);
         this.setState({
           error: true,
           helperText: "USERNAME ALREADY EXISTS"

@@ -4,7 +4,7 @@ import Header from "../components/Header";
 import FlappyBirdGame from "../components/FlappyBirdGame";
 import { Home, NotFound, Ranking } from "../pages";
 import "../stylesheet/Home.css";
-import Badrequest from "./Badrequest";
+import Forbidden from "./Forbidden";
 import { withCookies, Cookies } from "react-cookie";
 import { instanceOf } from "prop-types";
 
@@ -42,7 +42,7 @@ class Game extends Component {
         <div>
           <Header />
           <Switch>
-            <Route component={Badrequest} />
+            <Route component={Forbidden} />
           </Switch>
         </div>
       );
