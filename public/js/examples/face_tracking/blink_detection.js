@@ -1,5 +1,10 @@
+var eyeFound = false;
+
 (function exampleCode() {
   "use strict";
+
+  var gameScript = document.createElement("script");
+  gameScript.src = "/games/flappyBird.js";
 
   brfv4Example.initCurrentExample = function(brfManager, resolution) {
     brfManager.init(resolution, resolution, brfv4Example.appId);
@@ -27,6 +32,11 @@
       var face = faces[i];
 
       if (face.state === brfv4.BRFState.FACE_TRACKING) {
+        if (!eyeFound) {
+          eyeFound = true;
+          document.body.appendChild(gameScript);
+          console.log("eye found");
+        }
         // simple blink detection
 
         // A simple approach with quite a lot false positives. Fast movement can't be
@@ -80,7 +90,7 @@
               " " +
               yN.toFixed(2)
           );
-          bird.jump();
+
           blink();
         }
 
@@ -117,6 +127,9 @@
 
   function blink() {
     _blinked = true;
+    if(bird){
+      bird.jump();
+    }
 
     if (_timeOut > -1) {
       clearTimeout(_timeOut);
