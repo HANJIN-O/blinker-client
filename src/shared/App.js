@@ -1,9 +1,11 @@
 import React, { Component } from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import { Game, SignUp, SignIn, NotFound } from "../pages";
+
 import { withRouter } from "react-router-dom";
 
 class App extends Component {
+
   // eslint-disable-next-line constructor-super
   constructor(props, { match }) {
     super(props);
@@ -12,21 +14,7 @@ class App extends Component {
     };
   }
 
-  // componentDidMount() {
-  //   this.setState({
-  //     loggedIn: document.cookie
-  //   });
-  // }
-
   render() {
-    // console.log(document.cookie);
-    //
-    //
-    // console.log(this.match);
-    //
-    // console.log(this.state.match);
-    //
-    // console.log(this.props.match);
 
     // eslint-disable-next-line react/prop-types
     if (this.props.match.path !== "/game/flappyBird" && window.cameraStop) {
@@ -40,15 +28,11 @@ class App extends Component {
       <Router>
         <div className="App">
           <Switch>
-            {/*<Route path="/signOut" component={SignOut} />*/}
-            <Route path="/game" component={Game} />
-            <Route path="/signup" component={SignUp} />
-            <Route exact path="/" component={SignIn} />
-            <Route component={NotFound} />
+            <Route component={Badrequest} />
           </Switch>
         </div>
-      </Router>
-    );
+      );
+    }
   }
 }
 
